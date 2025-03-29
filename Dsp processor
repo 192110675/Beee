@@ -1,0 +1,106 @@
+Sine Wave Generation:
+
+assembly
+
+Sine wave generation
+
+Registers used:
+
+ARO: angle register
+
+ARI: sine value register
+
+MOV ARO, #0 ; initialize angle to 0
+
+LOOP SINE:
+
+MOV AR1, #0 ; initialize sine value to 0
+
+LDP ARI, SINETAB(ARO); load sine value from lookup table
+
+ST AR1, DST ; store sine value in destination.
+
+ADD AR0, #10 ; increment angle by 10 degrees.
+
+CMP ARO, #360 check if angle exceeds 360 degrees
+
+JL LOOP SINE loop if angle is less than 360 degrees
+
+Square Wave Generation:
+
+assembly
+
+Square wave generation.
+
+Registers used:
+
+ARO: counter register
+
+ARI: output register
+
+MOV ARO, #0 : initialize counter to (
+
+LOOP SQUARE
+
+MOV ARL, #0xFF set output high (square wave)
+
+ST ARI, DST : store output in destination
+
+ADD AR0,#10 ; increment counter by 10
+
+CMP ARO, #100 check if counter exceeds 100
+
+JL LOOP SQUARE loop if counter is less than 100
+
+MOV AR1, #0x00 set output low (square wave)
+
+ST AR1, DST store output in destination.
+
+SUB ARO, #100 ; decrement counter by 100
+
+JL LOOP SQUARE loop if counter is less than 0
+
+Triangular Wave Generation:
+
+assembly
+
+: Triangular wave generation
+
+Registers used:
+
+ARO: counter register;
+
+ARI: output register;
+MOV ARO, #0 : initialize counter to 0
+
+LOOP TRIANGLE:
+
+MOV ARI, ARO ; output increases linearly with counter
+
+ST ARI, "DST store output in destination
+
+ADD AR0, #10 ; increment counter by 10
+
+CMP ARO, #100 ; check if counter exceeds 100
+
+JL LOOP TRIANGLE loop if counter is less than 100
+
+SUB ARO, #100 ; decrement counter by 100
+
+NEG ARI : output decreases linearly with counter
+
+ST AR1, "DST ; store output in destination
+
+JL LOOP TRIANGLE loop if counter is less than 0
+
+Common Code:
+
+assembly
+
+Common code for all waveforms
+
+Registers used:
+
+DST: destination address
+
+MOV DST, #0x0000 initialize
