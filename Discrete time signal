@@ -1,0 +1,101 @@
+//UNIT IMPULSE SIGNAL
+
+clear all:
+
+close:
+
+N = 5 //SET LIMIT
+
+t * 1 = - 5/5 ;
+
+x1[zeros (1, N),ones (1,1), zeros (1, N)];
+
+subplot (2,4,1);
+
+plot2d3 (11x1)
+
+xlabel (time');
+
+ylabel (Ampli tude');
+
+title (Unit im pulsesignal');
+
+//UNIT STEP SIGNAL
+
+t * 2 = - 5/5 ;
+
+x2=[ zeros (1, N),ones (1, N+1)];
+
+subplot (2,4,2);
+
+plot2d3 (t2,x2)
+
+xlabel (time);
+
+ylabel (Ampli tude):
+
+title (Unitstepsignal');
+
+//EXPONENTIAL SIGNAL
+
+13=0:1:20:
+
+subplot (2,3,3);
+
+plot2d3 (t3, x3);
+
+x * 3 = exp(- t * 3)
+
+xlabel('time');
+
+ylabel (Ampli tude");
+
+title (Exponentialsignal');
+
+//UNIT RAMP SIGNAL 4
+
+t4-0:20;
+
+x * 4 = 14
+
+subplot (2,3,4);
+
+plot2d3 (t4, x4);
+
+xlabel('time');
+
+ylabel (Ampli tude):
+
+title (Unit rampsignal');
+
+//SINUSOIDAL SIGNAL
+
+t * 5 = (0/0.04) / 1
+
+x5sin (2%pit5);
+
+subplot (2,3,5):
+
+plot2d3 (15, x5);
+
+title('SinusoidalSignal')
+
+xlabel (time');
+
+ylabel (Ampli tude');
+
+//RANDOM SIGNAL
+
+t * 6 = (- 10/1) / 20 ;
+
+x6rand (1,31);
+
+subplot (2,3,6);
+
+plot2d3 (16, x6);
+
+xlabel (time');
+
+ylabel (Ampli tude");
+
+title (Random signal');
